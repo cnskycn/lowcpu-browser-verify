@@ -1,0 +1,39 @@
+{
+  "name": "lowcpu-browser-verify",
+  "version": "1.0.0",
+  "description": "Stop Playwright's headless shell from software-rasterizing WebGL and pinning 4-6 CPU cores. Adds channel:'chromium' hardware rendering, a GPU assertion helper, and a CI-gateable doctor.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "playwright",
+    "webgl",
+    "headless",
+    "swiftshader",
+    "gpu",
+    "cpu",
+    "performance",
+    "threejs",
+    "ci"
+  ],
+  "exports": {
+    ".": "./scripts/launch.mjs",
+    "./launch": "./scripts/launch.mjs"
+  },
+  "bin": {
+    "lowcpu-doctor": "./scripts/doctor.mjs"
+  },
+  "files": [
+    "scripts",
+    "SKILL.md",
+    "README.md"
+  ],
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs"
+  },
+  "peerDependencies": {
+    "playwright": ">=1.49.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
